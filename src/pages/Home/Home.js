@@ -1,7 +1,7 @@
 import React from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import {connect} from 'react-redux'
-import { Table, Tag, Space,Typography } from 'antd';
+import { Table, Typography } from 'antd';
 import moment from 'moment'
 import {findCode} from '../../helpers/helpers'
 import {startGetSchedule} from '../../redux/actions/Summary/scheduleAction'

@@ -4,13 +4,13 @@ import InfoCard from '../../components/InfoCard/InfoCard'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import { Select } from 'antd';
-import { Table, Tag, Space,Typography, Button } from 'antd';
+import { Table,  Button } from 'antd';
 // import {seasonsArray} from '../../helpers/helpers'
 import {startGetDrivers} from '../../redux/actions/driversAction'
 import './Drivers.css'
 
 const { Option } = Select;
-const {Title} = Typography
+// const {Title} = Typography
 
 
 

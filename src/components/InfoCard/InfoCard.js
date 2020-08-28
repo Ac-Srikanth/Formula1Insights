@@ -10,7 +10,7 @@ const InfoCard = ({info}) => {
             <p>{info.extract}</p>
         </div>
         <div className ="info-footer">
-            <a href={`${info.content_urls.desktop.page}`} target="_blank">More Information</a>
+            <a href={`${info.content_urls.desktop.page}`} rel="noopener noreferrer" target="_blank">More Information</a>
         </div>   
     </div>
     )

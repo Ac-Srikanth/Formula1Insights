@@ -1,12 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { Select } from 'antd';
-import { Table, Tag, Space,Typography } from 'antd';
+import { Table } from 'antd';
 import { startGetResults} from '../../redux/actions/resultAction'
 import {startGetRaces} from '../../redux/actions/racesAction'
 
 const { Option } = Select;
-const {Title} = Typography
+// const {Title} = Typography
 
 
 class Results extends React.Component {

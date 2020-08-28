@@ -11,7 +11,7 @@ import {Layout} from 'antd'
 import Map from './pages/Map/Map'
 import './App.css'
 
-const {Content} = Layout
+// const {Content} = Layout
 
 class App extends React.Component{
   render(){
