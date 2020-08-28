@@ -10,7 +10,7 @@ export const getResults = (results) => {
 
 export const startGetResults = (round, year) => {
     return((dispatch) => {
-        axios.get(`http://ergast.com/api/f1/${year}/${round}/results.json`)
+        axios.get(`https://ergast.com/api/f1/${year}/${round}/results.json`)
         .then((response) => {
             if(response.data.MRData.RaceTable.Races.length > 0) {
                 console.log('Results', response.data.MRData.RaceTable.Races[0]['Results'])

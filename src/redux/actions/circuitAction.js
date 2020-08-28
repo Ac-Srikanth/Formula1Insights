@@ -7,7 +7,7 @@ export const getCircuits = (circuits) => {
 
 export const startGetCircuits = (year) => {
     return((dispatch) =>{
-        axios.get(`http://ergast.com/api/f1/${year}/circuits.json`)
+        axios.get(`https://ergast.com/api/f1/${year}/circuits.json`)
         .then((response) => {
             console.log('CIRCUITS', response.data.MRData.CircuitTable.Circuits)
             let circuits = response.data.MRData.CircuitTable.Circuits

@@ -6,7 +6,7 @@ export const getSchedule = (schedule) => {
 
 export const startGetSchedule = (year) => {
     return((dispatch) => {
-        axios.get(`http://ergast.com/api/f1/${year}.json`)
+        axios.get(`https://ergast.com/api/f1/${year}.json`)
         .then((response) => {
             let schedule = response.data.MRData.RaceTable.Races
             console.log('Schedule', schedule)

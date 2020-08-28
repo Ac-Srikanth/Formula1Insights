@@ -26,7 +26,7 @@ class Constructors extends React.Component {
     handleConstructorChange = (value) => {
         console.log(value)
         let constructorId = value[1].substring(value[1].lastIndexOf('/')+ 1)
-        axios.get(`http://ergast.com/api/f1/${this.props.season}/constructors/${value[0]}/results.json`)
+        axios.get(`https://ergast.com/api/f1/${this.props.season}/constructors/${value[0]}/results.json`)
         .then((response) => {
             console.log(response.data.MRData.RaceTable.Races)
             let results = response.data.MRData.RaceTable.Races

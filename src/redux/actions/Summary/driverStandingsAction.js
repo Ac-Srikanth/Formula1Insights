@@ -6,7 +6,7 @@ export const getDriverStandings = (results) => {
 
 export const startGetDriverStandings = (year) => {
     return((dispatch) => {
-        axios.get(`http://ergast.com/api/f1/${year}/driverStandings.json`)
+        axios.get(`https://ergast.com/api/f1/${year}/driverStandings.json`)
         .then((response) => {
             let results = response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings
             console.log('Driver Standings', results)

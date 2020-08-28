@@ -6,7 +6,7 @@ export const getConstructorStandings = (results) => {
 
 export const startGetConstructorStandings = (year) => {
     return((dispatch) => {
-        axios.get(`http://ergast.com/api/f1/${year}/constructorStandings.json`)
+        axios.get(`https://ergast.com/api/f1/${year}/constructorStandings.json`)
         .then((response) => {
             console.log('ConstructorStandings', response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings)
             let constructorData = response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings

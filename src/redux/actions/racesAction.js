@@ -7,7 +7,7 @@ export const getRaces = (races) => {
 
 export const startGetRaces = (year) => {
     return((dispatch) => {
-        axios.get(`http://ergast.com/api/f1/${year}.json`)
+        axios.get(`https://ergast.com/api/f1/${year}.json`)
         .then((response)=> {
             console.log('MAIN', response.data.MRData.RaceTable.Races)
             const Races = response.data.MRData.RaceTable.Races
