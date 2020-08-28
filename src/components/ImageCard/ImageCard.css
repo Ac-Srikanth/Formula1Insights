@@ -1,0 +1,22 @@
+.image-card {
+    width: 22vw;
+	display: flex;
+	flex-direction: column;
+	height: 450px;
+	align-items: center;
+    position: relative;
+    border: 1px solid #d8dee3;
+    border-radius: 2px;
+    background-color: white;
+    margin-right: 10px;
+}
+
+.image {
+    width: 90%;
+	height: 90%;
+    background-size: contain;
+    background-repeat: no-repeat;
+	background-position: center;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}

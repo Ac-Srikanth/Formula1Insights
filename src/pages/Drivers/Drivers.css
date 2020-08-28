@@ -1,0 +1,24 @@
+.headings {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    /* border: 5px solid red; */
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    /* align-items: flex-start; */
+    margin: 10px;
+    /* border: 5px solid blue; */
+}
+
+.driver-container {
+    display: flex;
+    margin: 20px;
+}
+
+#driver-container-main{
+    overflow: hidden;
+}

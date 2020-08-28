@@ -1,0 +1,25 @@
+.constructor-container {
+    display: flex;
+    margin: 20px;
+}
+#constructors-container{
+    overflow: hidden;
+}
+.headings {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    /* align-items: flex-start; */
+    margin: 10px;
+    /* border: 5px solid blue; */
+}
+
+.constructor-table {
+    margin: 20px auto !important;
+}

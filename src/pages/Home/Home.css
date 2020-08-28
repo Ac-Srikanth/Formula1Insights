@@ -1,0 +1,27 @@
+.table-season {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.heading {
+	text-align: center;
+	/* font-weight: bold; */
+	/* font-size: 30px; */
+}
+
+
+.flag {
+	margin-right: 10px;
+}
+
+.secondary-tables {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 20px;
+}
+
+#homeContainer{
+	overflow: hidden;
+}

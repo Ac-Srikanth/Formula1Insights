@@ -1,0 +1,19 @@
+.info-card{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    margin: 0 auto;
+    align-items: center;
+    border: 1px solid #d8dee3;
+    border-radius: 2px;
+    background-color: white;
+    margin-left: 10px;
+    margin: 0 auto;
+}
+
+.info-body {
+    width: 80%;
+    height: 80%;
+    margin: 20px auto;
+}

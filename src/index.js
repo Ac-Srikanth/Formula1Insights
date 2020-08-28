@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import {BrowserRouter as Router} from 'react-router-dom'
+import {Provider} from 'react-redux'
 import App from './App';
+import configureStore from './redux/store/configureStore'
+import './index.css';
+// import {startGetResults} from './redux/actions/resultAction'
 import * as serviceWorker from './serviceWorker';
+
+const store = configureStore()
+
+// store.subscribe(()=>{
+//   console.log('Subscribe', store.getState())
+// })
+
+// store.dispatch(startGetResults())
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
