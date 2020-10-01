@@ -1,4 +1,5 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import thunk from 'redux-thunk'
 import resultReducer from '../reducers/resultReducer'
 import raceReducer from '../reducers/raceReducer'
@@ -11,7 +12,7 @@ import driverStandingsReducer from '../reducers/Summary/driverStandingsReducer'
 import constructorStandingsReducer from '../reducers/Summary/constructorStandingsReducer'
 
 const configureStore = () => {
-    const store = createStore(combineReducers({
+    return createStore(combineReducers({
         results: resultReducer,
         races: raceReducer,
         drivers: driverReducer,
@@ -21,8 +22,7 @@ const configureStore = () => {
         circuits: circuitReducer,
         driverStandings: driverStandingsReducer,
         constructorStandings:constructorStandingsReducer
-    }), applyMiddleware(thunk))
-    return store
+    }), composeWithDevTools(applyMiddleware(thunk)))
 }
 
 export default configureStore
