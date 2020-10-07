@@ -1,13 +1,12 @@
-import React from 'react'
-import {connect} from 'react-redux'
 import { Select } from 'antd';
 import { Table } from 'antd';
+import React from 'react'
+import {connect} from 'react-redux'
+
 import { startGetResults} from '../../redux/actions/resultAction'
 import {startGetRaces} from '../../redux/actions/racesAction'
 
 const { Option } = Select;
-// const {Title} = Typography
-
 
 class Results extends React.Component {
     constructor(props) {
@@ -18,29 +17,28 @@ class Results extends React.Component {
         }
     }
     
-    handleRaceChange = (value) => {
-        console.log(value) //race round
-        this.setState({ race: value[1] })
-        this.props.dispatch(startGetResults(value[0], this.props.season))
-    }    
-
     componentDidMount() {
         this.props.dispatch(startGetRaces(this.props.season))
     }
 
+    handleRaceChange = (raceName) => {
+        const {dispatch, races, season} = this.props;
+        const race = races.find((race) => race.raceName === raceName);
+        this.setState({ race: race.raceName });
+        dispatch(startGetResults(race.round, season));
+    }
+
     render(){
         const {races, results} = this.props
-        console.log('results', results)       
         return (
             <div style={{'overflow': 'hidden'}}>
                 <div className="headings">
                     <h2>Race Results - {this.state.race}({this.props.season})</h2>              
-                    <Select style={{width: 300}}  onChange={this.handleRaceChange}>
-                        {races.map((race, index) => {
-                            return (
-                                <Option key={index} value={[race.round, race.raceName]}>{race.raceName}</Option>
-                            )
-                        })}
+                    <Select style={{width: 300}} onChange={this.handleRaceChange}>
+                        {races.map((race, index) => (
+                            <Option key={index} value={race.raceName}>{race.raceName}</Option>
+                          )
+                        )}
                     </Select>
                 </div>                
                 <Table 
@@ -51,7 +49,6 @@ class Results extends React.Component {
                     className="table-season"
                 />
             </div>
-            
         )
     }
 }
@@ -69,18 +66,15 @@ const resultsColumns = [
     },
     {
         title: 'Driver',
-        render: (record) => {
-            return(
+        render: (record) => (
             `${record.Driver.givenName} ${record.Driver.familyName}`
-            )}
+        )
     },
     {
         title: 'Constructor',
-        render: (record) => {
-            return(
-                `${record.Constructor.name}`
-            )
-        }
+        render: (record) => (
+            `${record.Constructor.name}`
+        )
     },
     {
         title: 'Status',
@@ -93,27 +87,21 @@ const resultsColumns = [
     },
     {
         title: 'FastestLap',
-        render: (record) => {
-            return (
-                record.FastestLap ? (record.FastestLap.Time.time): ''
-            )
-        }
+        render: (record) => (
+            record.FastestLap ? (record.FastestLap.Time.time) : ''
+        )
     },
     {
         title: 'Lap Number',
-        render: (record) => {
-            return (
-                record.FastestLap ? (record.FastestLap.lap) : ''
-            )
-        }
+        render: (record) => (
+            record.FastestLap ? (record.FastestLap.lap) : ''
+        )
     }
 ]
 
 const mapStateToProps = (state) => {
     return {        
-        races: state.races.map((race) => {
-            return {raceName: race.raceName, round: race.round}
-        }),
+        races: state.races.map((race) => ({raceName: race.raceName, round: race.round})),
         results: state.results,
         season: state.season
     }
