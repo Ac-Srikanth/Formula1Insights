@@ -12,7 +12,7 @@ const { Option } = Select;
 
 class Circuits extends React.Component {
     constructor(props) {
-        super(props)
+        super()
         this.state = {
             circuit: '',
             wiki: ''

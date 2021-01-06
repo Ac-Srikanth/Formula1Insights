@@ -131,7 +131,7 @@ const driverColumns = [
     },
     {
         title: 'Constructor',
-        render: (record) => record.Constructors[0].name,
+        render: (record) => record.Constructors[0] ? record.Constructors[0].name: '-',
         responsive: ['lg']
     },
     {
